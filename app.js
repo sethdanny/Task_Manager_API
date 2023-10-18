@@ -23,5 +23,4 @@ app.use(morgan('dev'));
 app.use('/api/v1/tasks', tasksRouter);
 app.listen(port, () => {
     console.log(`Server is listening at http://localhost:${port}`);
-    }
-);
+});

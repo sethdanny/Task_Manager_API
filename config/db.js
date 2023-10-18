@@ -10,7 +10,7 @@ const connectDB = async () => {
             useNewUrlParser: true ,
             useUnifiedTopology: true }
             );
-        console.log(`Database Connected at ${conn.connection.host}`.underline.red);  
+        console.log(`Database Connected at ${conn.connection.host}`.bold.underline.blue);  
     } catch (error) {
         console.log(error.message);   
     }
