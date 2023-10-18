@@ -14,9 +14,7 @@ const createTask = async (req, res) => {
     
     try {
         const {name} = req.body;
-        const task = await Task.create({
-            name,
-        })
+        const task = await Task.create({name})
         res.status(201).json(task);
     } catch (error) {
         res.status(400).json({error: error.message})
@@ -38,7 +36,7 @@ const getTask = async (req, res) => {
 
 const updateTask = async (req, res) => {
     try {
-        const {id:taskID} = re.params;
+        const {id:taskID} = req.params;
         const task = await Task.findOneAndUpdate({_id:taskID}, req.body,{
                 new: true, 
             runValidators: true
